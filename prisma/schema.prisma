@@ -12,10 +12,9 @@ datasource db {
 
 model Expense {
   id  Int @id @default(autoincrement())
-  name  String  @db.VarChar(255)
   description String  @db.VarChar(255)
   date DateTime @default(now())
-  amount  Decimal 
+  amount  Decimal @db.Decimal(65, 2)
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
 }

@@ -9,9 +9,9 @@ app.use(cors()); //use cors Allows a server to explicitly allow some cross-origi
 
 //Routes Here
 import ExpenseRoute from "./routes/ExpenseRoute.js";
-
+//all of the configuration in ExpenseRoute will be extended here
 app.use(ExpenseRoute);
-
+//Starting the server
 app.listen(PORT, () => {
 	console.log(`Server running at: localhost:${PORT}`);
 });

@@ -23,18 +23,18 @@ const descriptions = [
 
 //get the day intervals of dates for dummy data
 const dates_available = eachDayOfInterval({
-	start: new Date(2022, 2, 1),
-	end: new Date(2022, 3, 31),
+	start: new Date(2022, 3, 1),
+	end: new Date(2022, 4, 31),
 });
 
 //Where I place all my dummy data
 const sample_data = [];
 
 //to insert the randomize dummy account
-for (let i = 0; i < 40; i++) {
+for (let i = 0; i < descriptions.length; i++) {
 	sample_data.push({
-		description: descriptions[Math.floor(Math.random() * descriptions.length)],
-		date: dates_available[Math.floor(Math.random() * descriptions.length)],
+		description: descriptions[i],
+		date: dates_available[i],
 		amount: Math.random() * 2000,
 	});
 }

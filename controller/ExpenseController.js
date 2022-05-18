@@ -43,7 +43,7 @@ export const createExpense = async (req, res) => {
 		});
 
 		res.status(201).json({
-			message: `Expense of "${expense.expense}" is successfully created`,
+			message: `Expense of "${expense.description}" is successfully created`,
 		});
 	} catch (error) {
 		res.status(500).json({ error: error.message });

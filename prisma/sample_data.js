@@ -34,7 +34,7 @@ const sample_data = [];
 for (let i = 0; i < descriptions.length; i++) {
 	sample_data.push({
 		description: descriptions[i],
-		date: dates_available[i],
+		date: dates_available[Math.floor(Math.random() * descriptions.length)],
 		amount: Math.random() * 2000,
 	});
 }

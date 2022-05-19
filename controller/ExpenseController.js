@@ -75,10 +75,8 @@ export const expensePerWeek = async (req, res) => {
 		const totalExpenseInAWeek = await prisma.expense.aggregate({
 			where: {
 				date: {
-					/* gte: new Date("2022-3-1"),
-					lte: new Date("2022-3-6"), */
-					gte: new Date(req.body.date[0]),
-					lte: new Date(req.body.date[1]),
+					gte: new Date(req.query.startDate),
+					lte: new Date(req.query.endDate),
 				},
 			},
 			//sum the amount
@@ -86,6 +84,7 @@ export const expensePerWeek = async (req, res) => {
 				amount: true,
 			},
 		});
+
 		res.status(200).send(totalExpenseInAWeek);
 	} catch (error) {
 		res.status(500).json({ error: error.message });
